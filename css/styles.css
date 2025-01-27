@@ -2846,8 +2846,8 @@ textarea.form-control-lg {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #b8c2ff;
-    --bs-btn-border-color: #b8c2ff;
+    --bs-btn-bg: #596fff;
+    --bs-btn-border-color: #596fff;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #1a29cf;
     --bs-btn-hover-border-color: #1826c2;
@@ -11557,7 +11557,7 @@ html {
 
 .bg-gradient-primary-to-secondary {
     background: #1e30f3;
-    background: linear-gradient(315deg, #596fff 0%, #b8c2ff 100%);
+    background: linear-gradient(140deg, #596fff 0%, #b8c2ff 100%);
 }
 
 .text-gradient {
