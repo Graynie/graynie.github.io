@@ -34,7 +34,7 @@
     --bs-gray-700: #495057;
     --bs-gray-800: #343a40;
     --bs-gray-900: #212529;
-    --bs-primary: #596fff;
+    --bs-primary: #3D55F4;
     --bs-secondary: #b8c2ff;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
@@ -56,7 +56,7 @@
     --bs-body-bg-rgb: 255, 255, 255;
     --bs-font-sans-serif: "Plus Jakarta Sans";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bs-gradient: linear-gradient(100deg, rgba(89, 111, 255, 0.15), rgba(184, 194, 255, 0));
+    --bs-gradient: linear-gradient(100deg, rgba(61, 85, 244, 0.15), rgba(184, 194, 255, 0));
     --bs-body-font-family: var(--bs-font-sans-serif);
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 400;
@@ -11557,11 +11557,11 @@ html {
 
 .bg-gradient-primary-to-secondary {
     background: #1e30f3;
-    background: linear-gradient(140deg, #596fff 0%, #b8c2ff 100%);
+    background: linear-gradient(140deg, #3D55F4 0%, #b8c2ff 100%);
 }
 
 .text-gradient {
-    background: -webkit-linear-gradient(325deg, #596fff 0%, #b8c2ff 100%);
+    background: -webkit-linear-gradient(325deg, #3D55F4 0%, #b8c2ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
