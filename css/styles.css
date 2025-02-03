@@ -35,7 +35,7 @@
     --bs-gray-800: #343a40;
     --bs-gray-900: #212529;
     --bs-primary: #3D55F4;
-    --bs-secondary: #b8c2ff;
+    --bs-secondary: #CDD4FC;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
@@ -11557,11 +11557,11 @@ html {
 
 .bg-gradient-primary-to-secondary {
     background: #1e30f3;
-    background: linear-gradient(140deg, #3D55F4 0%, #b8c2ff 100%);
+    background: linear-gradient(140deg, #3D55F4 0%, #CDD4FC 100%);
 }
 
 .text-gradient {
-    background: -webkit-linear-gradient(325deg, #3D55F4 0%, #b8c2ff 100%);
+    background: -webkit-linear-gradient(325deg, #3D55F4 0%, #CDD4FC 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
