@@ -11789,8 +11789,8 @@ html[tp-theme=tp-theme-light] .cursor-white #ball {
   color: var(--tp-common-white);
 }
 .tp-footer-title {
-  font-weight: 500;
-  font-size: 100px;
+  font-weight: 300;
+  font-size: 50px;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--tp-common-white);
