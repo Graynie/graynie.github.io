@@ -97,13 +97,16 @@
         createBodies() {
             this.DOM.throwables.forEach(((t, e) => {
                 const i = t.querySelector("span"),
-                    s = t.getBoundingClientRect(),
+s = {
+    width: i.offsetWidth + 2,
+    height: i.offsetHeight + 4
+},
                     n = gsap.quickSetter(t, "x", "px"),
                     o = gsap.quickSetter(t, "y", "px"),
                     h = gsap.utils.random(.2 * -Math.PI, .2 * Math.PI),
                     r = gsap.utils.random(s.width / 2, this.width - s.width / 2),
                     a = -s.width - (e * s.height + 10),
-                    d = "sharp" === this.options.roundness ? 0 : s.height / 2,
+                    d = Math.min(s.width, s.height) * 0.40,
                     u = Matter.Bodies.rectangle(r, a, s.width, s.height, {
                         chamfer: {
                             radius: d
@@ -152,9 +155,13 @@
         }
         updateBodies() {
             this.DOM.throwables.forEach(((t, e) => {
-                const i = this.bodies[e],
-                    s = t.getBoundingClientRect(),
-                    n = "sharp" === this.options.roundness ? 0 : s.height / 2,
+const i = this.bodies[e],
+    el = t.querySelector("span"),
+    s = {
+        width: el.offsetWidth * 0.98,
+        height: el.offsetHeight * 1.05
+    },
+    n = Math.min(s.width, s.height) * 0.50,
                     o = Matter.Bodies.rectangle(i.position.x, i.position.y, s.width, s.height, {
                         chamfer: {
                             radius: n

@@ -1240,26 +1240,7 @@
 	});
 
 
-	// button hover animation
-	$('.tp-hover-btn').on('mouseenter', function (e) {
-		var x = e.pageX - $(this).offset().left;
-		var y = e.pageY - $(this).offset().top;
 
-		$(this).find('.tp-btn-circle-dot').css({
-			top: y,
-			left: x
-		});
-	});
-
-	$('.tp-hover-btn').on('mouseout', function (e) {
-		var x = e.pageX - $(this).offset().left;
-		var y = e.pageY - $(this).offset().top;
-
-		$(this).find('.tp-btn-circle-dot').css({
-			top: y,
-			left: x
-		});
-	});
 
 
 	var hoverBtns = gsap.utils.toArray(".tp-hover-btn-wrapper");
