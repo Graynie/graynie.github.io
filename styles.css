@@ -3029,7 +3029,7 @@ html[tp-theme="tp-theme-light"] .tp-header-btn a svg {
 
 .tp-hero-content > p {
     width: 100%;
-    max-width: 540px !important;
+    max-width: 680px !important;
     line-height: 1.5;
     text-wrap: balance;
 }
