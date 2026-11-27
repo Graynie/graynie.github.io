@@ -204,7 +204,6 @@ keys.forEach(key => {
     setTimeout(() => button.classList.remove('is-pressed'), 180);
     activateKey(key.id);
   });
-  keyContainer.append(button);
 });
 
 document.getElementById('redControl').addEventListener('click', () => nextMessage(1));
@@ -214,19 +213,6 @@ const purpleControl = document.getElementById('purpleControl');
 const yellowControl = document.getElementById('yellowControl');
 const greenLed = document.getElementById('greenLed');
 const yellowLed = document.getElementById('yellowLed');
-
-function toggleLight(button, led, color) {
-  const active = button.getAttribute('aria-pressed') !== 'true';
-  button.setAttribute('aria-pressed', String(active));
-  button.setAttribute('aria-label', `${active ? 'Apagar' : 'Encender'} luz ${color}`);
-  button.classList.toggle('is-latched', active);
-  led.classList.toggle('is-on', active);
-  showScreen(active ? `${color.toUpperCase()} LIGHT ON` : `${color.toUpperCase()} LIGHT OFF`,
-    active ? 'INDICATOR ENABLED' : 'INDICATOR DISABLED');
-}
-
-purpleControl.addEventListener('click', () => toggleLight(purpleControl, greenLed, 'verde'));
-yellowControl.addEventListener('click', () => toggleLight(yellowControl, yellowLed, 'amarilla'));
 
 // Ambas luces comienzan apagadas. Puedes cambiarlo en el HTML
 // añadiendo class="is-on" al LED y class="is-latched" al botón.

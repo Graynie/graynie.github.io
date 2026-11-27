@@ -1,0 +1,3477 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+/* PORTAFOLIO — independiente de Home y consola */
+.pf-page{--pf-bg:#17131f;--pf-surface:#211b2b;--pf-text:#f5edf2;--pf-muted:#c5b4ce;--pf-border:#51405e;--pf-accent:#c3a5e8;color:var(--pf-text);background:radial-gradient(ellipse at 85% 12%,#50335d66,transparent 45%),linear-gradient(160deg,var(--pf-bg),#21172d);padding:110px 0 70px;min-height:85vh;}
+.pf-workspace {
+    width: min(96%, 1600px);
+    margin-inline: auto;
+}
+
+.pf-hero {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    box-sizing: border-box;
+}
+.pf-hero{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;min-height:300px;padding:20px clamp(16px,5vw,85px) 32px;gap:24px;}
+.pf-kicker,.pf-panel-meta{font:13px/1.5 monospace;letter-spacing:.06em;color:var(--pf-muted);}
+.pf-intro h1{font-family:Silkscreen,monospace;font-size:clamp(30px,5.1vw,84px);line-height:1.15;letter-spacing:-.055em;color:var(--pf-text);margin:12px 0 20px;}
+.pf-intro h1 span{color:var(--pf-accent);}
+.pf-description{max-width:460px;border-left:3px solid var(--pf-accent);padding-left:18px;font:italic 16px/1.65 monospace;color:var(--pf-muted);}
+.pf-pc-stage{position:relative;isolation:isolate;display:grid;place-content:center;justify-items:center;gap:12px;min-height:240px;overflow:hidden;color:var(--pf-accent);transform: translateY(-80px);}
+.pf-pc-stage>svg{width:94px;height:94px;stroke-width:1;opacity:.75;}.pf-pc-stage small{font:11px monospace;letter-spacing:.08em;}.pf-orbit{position:absolute;inset:12% 8%;border:1px solid var(--pf-accent);border-radius:50%;transform:rotate(-18deg);opacity:.25;z-index:-1;}
+.pf-tabs{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));overflow-x:auto;scrollbar-width:thin;gap:2px;align-items:stretch;padding:8px 4px 0;}
+.pf-tab{appearance:none;display:flex;align-items:center;gap:10px;min-height:86px;padding:12px 10px;border:1px solid var(--pf-border);border-bottom:0;border-radius:18px 18px 0 0;background:linear-gradient(150deg,#ffffff0c,transparent),var(--pf-surface);color:var(--pf-text);text-align:left;cursor:pointer;font:500 13px/1.25 Arial,sans-serif;transition:background .2s,color .2s,border-color .2s;}
+.pf-tab>svg{width:25px;height:25px;flex:none;color:var(--pf-tab-accent);}.pf-tab span{display:block;}.pf-tab small{display:block;font:12px monospace;color:var(--pf-tab-accent);margin-bottom:4px;}.pf-tab:hover{border-color:var(--pf-tab-accent);}.pf-tab[aria-selected=true]{background:var(--pf-tab-accent);color:#241b30;border-color:var(--pf-tab-accent);box-shadow:0 -3px 16px color-mix(in srgb,var(--pf-tab-accent) 35%,transparent);}.pf-tab[aria-selected=true] small,.pf-tab[aria-selected=true]>svg{color:#241b30;}.pf-tab:focus-visible{outline:2px solid var(--pf-tab-accent);outline-offset:-4px;}
+.pf-panels{border:1px solid var(--pf-accent);border-radius:0 0 20px 20px;padding:14px;background:var(--pf-surface);box-shadow:0 0 22px color-mix(in srgb,var(--pf-accent) 15%,transparent);}
+.pf-panel{position:relative;min-height:420px;border:1px solid var(--pf-border);border-radius:12px;padding:22px;background:repeating-linear-gradient(0deg,transparent 0 4px,#ffffff03 4px 5px);}.pf-panel[hidden]{display:none!important;}.pf-panel-meta span{color:#86cfa2;}.pf-placeholder{min-height:350px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;}.pf-placeholder>svg{width:48px;height:48px;color:var(--pf-panel-accent);stroke-width:1.2;}.pf-placeholder h2{font-family:Silkscreen,monospace;font-size:clamp(20px,3vw,36px);color:var(--pf-text);margin:0;}.pf-placeholder p{color:var(--pf-muted);font:13px monospace;}
+html[tp-theme="tp-theme-light"] .pf-page{--pf-bg:#f4eaf5;--pf-surface:#f9f3fa;--pf-text:#30263b;--pf-muted:#66566f;--pf-border:#c8b5d2;background:radial-gradient(ellipse at 85% 12%,#d8b9ef88,transparent 50%),linear-gradient(160deg,#f4eaf5,#e3d4ed);}
+html[tp-theme="tp-theme-light"] .pf-tab:not([aria-selected=true]) small,html[tp-theme="tp-theme-light"] .pf-tab:not([aria-selected=true])>svg{color:#76539f;}
+html[tp-theme="tp-theme-light"] .pf-panel-meta span{color:#31764b;}
+@media(max-width:1100px){.pf-tabs{grid-template-columns:repeat(8,minmax(155px,1fr));}.pf-tab{min-height:76px;}}
+@media(max-width:650px){.pf-page{padding-top:90px;}.pf-hero{grid-template-columns:1fr;gap:0;}.pf-pc-stage{min-height:170px;}.pf-pc-stage>svg{width:65px;height:65px;}.pf-panel{padding:15px;min-height:340px;}.pf-placeholder{min-height:275px;}.pf-panels{padding:8px;}}
+@media(prefers-reduced-motion:reduce){.pf-tab{transition:none;}}
+
+/* =========================================
+   PORTAFOLIO — FONDO MULTIMEDIA
+========================================= */
+
+.pf-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: none;
+    min-height: 380px;
+
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CONTENEDOR DEL FONDO */
+
+.pf-hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: #080711;
+}
+
+/* AURORA GRADIENT */
+
+.pf-animated-gradient {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    isolation: isolate;
+
+    background: #080711;
+
+    --aurora-intensity: 0.95;
+    --aurora-blur: 35px;
+}
+
+/* LUCES */
+
+.pf-aurora-light {
+    position: absolute;
+
+    width: 75%;
+    height: 180%;
+
+    border-radius: 50%;
+    filter: blur(var(--aurora-blur));
+
+    opacity: var(--aurora-intensity);
+    mix-blend-mode: screen;
+
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* AZUL ELÉCTRICO */
+
+.pf-light-1 {
+    top: -60%;
+    left: -15%;
+
+    background: radial-gradient(
+        ellipse,
+        #3545f5 0%,
+        #2538c9 25%,
+        transparent 70%
+    );
+
+    animation: pfAurora1 8s ease-in-out infinite alternate;
+}
+
+/* MORADO */
+
+.pf-light-2 {
+    top: -10%;
+    left: 30%;
+
+    background: radial-gradient(
+        ellipse,
+        #9438df 0%,
+        #6525b8 25%,
+        transparent 70%
+    );
+
+    animation: pfAurora2 11s ease-in-out infinite alternate;
+}
+
+/* MAGENTA */
+
+.pf-light-3 {
+    top: 15%;
+    left: -10%;
+
+    background: radial-gradient(
+        ellipse,
+        #e52b9d 0%,
+        #a3269e 20%,
+        transparent 70%
+    );
+
+    animation: pfAurora3 9s ease-in-out infinite alternate;
+}
+
+/* TURQUESA */
+
+.pf-light-4 {
+    top: -70%;
+    left: 45%;
+
+    background: radial-gradient(
+        ellipse,
+        #35dfcf 0%,
+        #1878bd 25%,
+        transparent 70%
+    );
+
+    animation: pfAurora4 13s ease-in-out infinite alternate;
+}
+
+/* VIOLETA PROFUNDO */
+
+.pf-light-5 {
+    top: 0;
+    left: 50%;
+
+    background: radial-gradient(
+        ellipse,
+        #5136ce 0%,
+        #30218e 25%,
+        transparent 70%
+    );
+
+    animation: pfAurora5 10s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes pfAurora1 {
+    0% {
+        transform: translate3d(-20%, -10%, 0) scale(1);
+    }
+
+    100% {
+        transform: translate3d(70%, 35%, 0) scale(1.3);
+    }
+}
+
+@keyframes pfAurora2 {
+    0% {
+        transform: translate3d(20%, 20%, 0) scale(1.2);
+    }
+
+    100% {
+        transform: translate3d(-65%, -30%, 0) scale(0.9);
+    }
+}
+
+@keyframes pfAurora3 {
+    0% {
+        transform: translate3d(-15%, 15%, 0);
+    }
+
+    100% {
+        transform: translate3d(95%, -35%, 0) scale(1.2);
+    }
+}
+
+@keyframes pfAurora4 {
+    0% {
+        transform: translate3d(10%, -10%, 0);
+    }
+
+    100% {
+        transform: translate3d(-85%, 45%, 0) scale(1.3);
+    }
+}
+
+@keyframes pfAurora5 {
+    0% {
+        transform: translate3d(20%, 30%, 0);
+    }
+
+    100% {
+        transform: translate3d(-65%, -25%, 0) scale(1.2);
+    }
+}
+
+
+/* =========================================
+   VIDEO DEMO REEL
+========================================= */
+
+.pf-background-video {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: blur(5px) brightness(0.75) saturate(0.9);
+
+    transform: scale(1.06);
+
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.pf-background-video.is-playing {
+    opacity: 1;
+}
+
+/* DETENER LAS LUCES SI HAY VIDEO */
+
+.pf-hero-background:has(.pf-background-video.is-playing)
+.pf-aurora-light {
+    animation-play-state: paused;
+}
+
+
+/* =========================================
+   CAPA OSCURA
+========================================= */
+
+.pf-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 7, 17, 0.45),
+            rgba(8, 7, 17, 0.05)
+        ),
+        linear-gradient(
+            0deg,
+            var(--pf-bg) 0%,
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENIDO SUPERIOR
+========================================= */
+
+.pf-intro,
+.pf-pc-stage {
+    position: relative;
+    z-index: 3;
+    transform: translateY(-120px);
+}
+
+.pf-hero .pf-intro h1 {
+    color: #f5edf2;
+}
+
+.pf-hero .pf-kicker,
+.pf-hero .pf-description {
+    color: #e2d5ec;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .pf-animated-gradient {
+        --aurora-blur: 25px;
+    }
+    .pf-pc-stage {
+        transform: none;
+    }
+    .pf-light-5 {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .pf-hero {
+        min-height: 420px;
+    }
+
+    .pf-background-video {
+        filter: blur(5px) brightness(0.6);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pf-aurora-light {
+        animation: none;
+        will-change: auto;
+    }
+
+    .pf-background-video {
+        display: none;
+    }
+}
+
+/* =========================================
+   PORTAFOLIO — HERO REFINADO
+========================================= */
+
+.pf-page {
+
+    --pf-content-width: 1320px;
+    --pf-hero-height: 65vh;
+
+    padding-top: 65px;
+}
+
+/* ALINEACIÓN Y ALTURA */
+
+.pf-hero {
+
+    width: 100%;
+    max-width: none;
+
+    min-height: clamp(480px, var(--pf-hero-height), 850px);
+
+    padding-top: 50px;
+    padding-bottom: 110px;
+
+    padding-inline: max(
+        24px,
+        calc((100% - var(--pf-content-width)) / 2)
+    );
+
+    grid-template-columns: 1.1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   TIPOGRAFÍA Y COMPOSICIÓN
+========================================= */
+
+.pf-intro {
+
+    position: relative;
+    z-index: 3;
+
+    max-width: 750px;
+}
+
+.pf-intro .pf-kicker {
+
+    font-size: 13px;
+    letter-spacing: 0.12em;
+
+    color: #d6bce9;
+
+    margin-bottom: 22px;
+}
+
+.pf-intro h1 {
+
+    font-size: clamp(38px, 5.3vw, 92px);
+
+    line-height: 1.12;
+    letter-spacing: -0.055em;
+
+    margin: 0 0 28px;
+
+    text-shadow:
+        0 4px 25px rgba(0, 0, 0, 0.25),
+        0 0 40px rgba(195, 165, 232, 0.12);
+}
+
+.pf-description {
+
+    max-width: 490px;
+
+    font-size: clamp(14px, 1.1vw, 18px);
+    line-height: 1.8;
+
+    padding-left: 20px;
+
+    border-left: 3px solid var(--pf-accent);
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   FONDO — ACABADO CINEMATOGRÁFICO
+========================================= */
+
+.pf-video-overlay {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(9, 7, 18, 0.55) 0%,
+            rgba(9, 7, 18, 0.15) 50%,
+            transparent 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            var(--pf-bg) 0%,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(9, 7, 18, 0.25),
+            transparent 35%
+        );
+}
+
+/* TEXTURA GRANULADA */
+
+.pf-hero-background::after {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    background-image: url("assets/img/bg/distort-bg.png");
+    background-repeat: repeat;
+
+    opacity: 0.12;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   ESPACIO PARA LA COMPUTADORA 3D
+========================================= */
+
+.pf-pc-stage {
+
+    min-height: 340px;
+
+    overflow: visible;
+
+    color: #d4b3f0;
+}
+
+.pf-orbit {
+
+    inset: 8% -5%;
+
+    opacity: 0.22;
+
+    transform: rotate(-24deg);
+
+    border-color: #d2a9f4;
+}
+
+
+/* =========================================
+   ESTRELLAS DECORATIVAS
+========================================= */
+
+.pf-hero-decorations {
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.pf-star {
+
+    position: absolute;
+
+    color: #e3c6ff;
+
+    text-shadow: 0 0 20px #bd8df7;
+
+    animation: pfStarGlow 4s ease-in-out infinite;
+}
+
+.pf-star-1 {
+
+    top: 18%;
+    left: 8%;
+
+    font-size: 26px;
+}
+
+.pf-star-2 {
+
+    top: 25%;
+    left: 49%;
+
+    font-size: 18px;
+
+    animation-delay: -1s;
+}
+
+.pf-star-3 {
+
+    top: 16%;
+    right: 12%;
+
+    font-size: 32px;
+
+    animation-delay: -2s;
+}
+
+.pf-star-4 {
+
+    bottom: 25%;
+    right: 8%;
+
+    font-size: 16px;
+
+    animation-delay: -3s;
+}
+
+@keyframes pfStarGlow {
+
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+
+/* =========================================
+   BOTÓN EXPLORAR PROYECTOS
+========================================= */
+
+.pf-scroll-cue {
+
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--pf-text);
+
+    text-decoration: none;
+
+    z-index: 5;
+}
+
+.pf-scroll-label {
+
+    font-family: monospace;
+    font-size: 11px;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    opacity: 0.8;
+
+    transition: opacity 0.3s ease;
+}
+
+.pf-scroll-icon {
+
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(195, 165, 232, 0.55);
+    border-radius: 50%;
+
+    background: rgba(195, 165, 232, 0.08);
+
+    color: var(--pf-accent);
+
+    box-shadow: 0 0 18px rgba(195, 165, 232, 0.12);
+
+    animation: pfScrollBounce 2s ease-in-out infinite;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.pf-scroll-icon svg {
+
+    width: 20px;
+    height: 20px;
+
+    stroke-width: 1.5;
+}
+
+.pf-scroll-cue:hover {
+
+    color: var(--pf-text);
+}
+
+.pf-scroll-cue:hover .pf-scroll-icon {
+
+    background: var(--pf-accent);
+    color: #21172d;
+
+    box-shadow: 0 0 25px var(--pf-accent);
+
+    animation-play-state: paused;
+}
+
+.pf-scroll-cue:hover .pf-scroll-label {
+
+    opacity: 1;
+}
+
+@keyframes pfScrollBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+
+/* =========================================
+   TRANSICIÓN HACIA LAS GALERÍAS
+========================================= */
+
+.pf-workspace {
+
+    position: relative;
+
+    margin-top: 0;
+
+    padding-top: 20px;
+
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .pf-hero {
+
+        min-height: 550px;
+
+        padding-inline: 5%;
+    }
+
+    .pf-pc-stage {
+
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .pf-page {
+
+        padding-top: 70px;
+    }
+
+    .pf-hero {
+
+        grid-template-columns: 1fr;
+
+        min-height: 620px;
+
+        padding-top: 40px;
+        padding-bottom: 110px;
+
+        gap: 10px;
+    }
+
+    .pf-intro h1 {
+
+        font-size: clamp(30px, 8vw, 52px);
+    }
+
+    .pf-pc-stage {
+
+        min-height: 190px;
+    }
+
+    .pf-star-1,
+    .pf-star-4 {
+
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pf-star,
+    .pf-scroll-icon {
+
+        animation: none;
+    }
+}
+
+/* =========================================
+   PORTAFOLIO — MINIMAL EDITORIAL HERO
+========================================= */
+
+.pf-hero {
+
+    --pf-content-width: 1320px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+
+    align-items: center;
+
+    width: 100%;
+    min-height: clamp(480px, 65vh, 850px);
+
+    padding-block: 65px;
+
+    padding-inline: max(
+        24px,
+        calc((100% - var(--pf-content-width)) / 2)
+    );
+
+    gap: 45px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   COMPOSICIÓN DEL TEXTO
+========================================= */
+
+.pf-intro {
+
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 750px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   TÍTULO PRINCIPAL
+========================================= */
+
+.pf-hero .pf-intro h1 {
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: clamp(38px, 5.2vw, 100px);
+    font-weight: 700;
+
+    line-height: 1.05;
+    letter-spacing: -0.055em;
+
+    color: #f8f3fc;
+
+    margin: 0 0 12px;
+
+    text-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(220, 190, 255, 0.15);
+}
+
+.pf-intro h1 span {
+
+    color: #dfb7f4;
+}
+
+
+/* =========================================
+   SUBTÍTULO EDITORIAL
+========================================= */
+
+.pf-hero .pf-kicker {
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: clamp(10px, 0.9vw, 14px);
+    font-weight: 400;
+
+    letter-spacing: 0.15em;
+
+    color: #e7d9f1;
+
+    margin: 0;
+
+    text-transform: uppercase;
+}
+
+.pf-kicker span {
+
+    color: #d4acec;
+
+    margin-inline: 5px;
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.pf-hero .pf-description {
+
+    max-width: 440px;
+
+    margin: 32px auto 30px;
+    padding: 0;
+
+    border: none;
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: clamp(14px, 1.15vw, 18px);
+    font-weight: 400;
+    font-style: normal;
+
+    line-height: 1.7;
+
+    color: #eee5f5;
+
+    text-align: center;
+
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   FLECHA EDITORIAL — SIN CONTENEDOR
+========================================= */
+
+.pf-intro .pf-scroll-cue {
+
+    position: relative;
+
+    inset: auto;
+    transform: none;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 20px;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+
+    color: #eee3f8;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.pf-scroll-label {
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    opacity: 0.8;
+
+    transition: opacity 0.3s ease;
+}
+
+.pf-intro .pf-scroll-cue svg {
+
+    width: 28px;
+    height: 28px;
+
+    stroke-width: 1.25;
+
+    animation: pfEditorialArrow 1.8s
+        ease-in-out infinite;
+
+    transition: filter 0.3s ease;
+}
+
+.pf-intro .pf-scroll-cue:hover {
+
+    background: transparent;
+    box-shadow: none;
+
+    color: #ffffff;
+}
+
+.pf-scroll-cue:hover .pf-scroll-label {
+
+    opacity: 1;
+}
+
+.pf-scroll-cue:hover svg {
+
+    filter: drop-shadow(0 0 8px #e0b4ff);
+}
+
+@keyframes pfEditorialArrow {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* =========================================
+   ESPACIO PARA EL MODELO 3D
+========================================= */
+
+.pf-hero .pf-pc-stage {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 380px;
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   CONTRASTE DEL FONDO
+========================================= */
+
+.pf-video-overlay {
+
+    background:
+
+        radial-gradient(
+            ellipse at 30% 45%,
+            rgba(12, 7, 26, 0.4),
+            transparent 65%
+        ),
+
+        linear-gradient(
+            0deg,
+            var(--pf-bg, #15111d),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(10, 5, 20, 0.15),
+            transparent 25%
+        );
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .pf-hero {
+
+        padding-inline: 5%;
+
+        grid-template-columns: 1.1fr 1fr;
+
+        gap: 20px;
+    }
+
+    .pf-hero .pf-pc-stage {
+
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .pf-hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 65px 20px 35px;
+
+        gap: 20px;
+    }
+
+    .pf-hero .pf-intro h1 {
+
+        font-size: clamp(34px, 10vw, 65px);
+    }
+
+    .pf-hero .pf-pc-stage {
+
+        min-height: 230px;
+    }
+
+    .pf-hero .pf-description {
+
+        margin: 25px auto 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pf-intro .pf-scroll-cue svg {
+
+        animation: none;
+    }
+}
+
+
+/* =========================================
+   PORTAFOLIO — LED EDITORIAL HERO
+========================================= */
+
+.pf-hero {
+
+    --pf-content-width: 1320px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+
+    align-items: center;
+
+    width: 100%;
+    min-height: clamp(500px, 70vh, 850px);
+
+    padding-block: 70px;
+
+    padding-inline: max(
+        24px,
+        calc((100% - var(--pf-content-width)) / 2)
+    );
+
+    gap: 40px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   COMPOSICIÓN DEL TEXTO
+========================================= */
+
+.pf-intro {
+
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 780px;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   TÍTULO — DOT MATRIX LED
+========================================= */
+
+.pf-hero .pf-intro .pf-led-title {
+
+    --led-size: 4px;
+    --led-radius: 1.4px;
+    --led-color: #ffffff;
+
+    display: inline-flex;
+    align-items: baseline;
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: clamp(30px, 4.7vw, 90px);
+    font-weight: 700;
+
+    line-height: 1.15;
+    letter-spacing: -0.045em;
+
+    white-space: nowrap;
+
+    margin: 0 0 18px;
+
+    color: #ffffff;
+    text-shadow: none;
+}
+
+
+/* PUNTOS LED */
+
+.pf-led-text {
+
+    display: inline-block;
+
+    background-image: radial-gradient(
+        circle,
+        var(--led-color) var(--led-radius),
+        transparent calc(var(--led-radius) + 0.35px)
+    );
+
+    background-size:
+        var(--led-size)
+        var(--led-size);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 0 3px rgba(255,255,255,0.5))
+        drop-shadow(0 0 10px rgba(197,165,255,0.4));
+
+    animation: pfLedGlow 3s ease-in-out infinite;
+}
+
+
+/* PUNTO FINAL MORADO */
+
+.pf-hero .pf-led-title .pf-led-dot {
+
+    color: #d58af4;
+
+    -webkit-text-fill-color: #d58af4;
+
+    margin-left: 3px;
+
+    text-shadow:
+        0 0 8px rgba(213,138,244,0.7),
+        0 0 22px rgba(190,75,255,0.5);
+}
+
+
+/* RESPIRACIÓN LUMINOSA */
+
+@keyframes pfLedGlow {
+
+    0%, 100% {
+
+        filter:
+            drop-shadow(0 0 2px rgba(255,255,255,0.4))
+            drop-shadow(0 0 8px rgba(197,165,255,0.3));
+    }
+
+    50% {
+
+        filter:
+            drop-shadow(0 0 4px rgba(255,255,255,0.65))
+            drop-shadow(0 0 14px rgba(197,165,255,0.5));
+    }
+}
+
+
+/* =========================================
+   SUBTÍTULO EDITORIAL
+========================================= */
+
+.pf-hero .pf-kicker {
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: clamp(10px, 1vw, 15px);
+    font-weight: 500;
+
+    letter-spacing: 0.16em;
+
+    line-height: 1.5;
+
+    color: #eee6f5;
+
+    margin: 0;
+
+    text-transform: uppercase;
+}
+
+.pf-hero .pf-kicker span {
+
+    color: #d89bf5;
+
+    margin-inline: 6px;
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.pf-hero .pf-description {
+
+    width: 100%;
+    max-width: 460px;
+
+    margin: 28px 0 36px;
+    padding: 0;
+
+    border: none;
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: clamp(15px, 1.25vw, 20px);
+    font-weight: 400;
+    font-style: normal;
+
+    line-height: 1.65;
+
+    color: #f0e9f6;
+
+    text-align: left;
+
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+
+/* =========================================
+   EXPLORAR PROYECTOS
+========================================= */
+
+.pf-intro .pf-scroll-cue {
+
+    position: relative;
+
+    inset: auto;
+    transform: none;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    align-self: flex-start;
+
+    width: fit-content;
+
+    gap: 14px;
+
+    margin: 0;
+    padding: 8px 0;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+
+    color: #eee5f7;
+
+    text-decoration: none;
+}
+
+
+/* TEXTO DEL BOTÓN */
+
+.pf-intro .pf-scroll-label {
+
+    font-family: "Space Grotesk", Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    opacity: 0.85;
+
+    transition: opacity 0.3s ease;
+}
+
+
+/* FLECHA CENTRADA DEBAJO DEL TEXTO */
+
+.pf-intro .pf-scroll-cue svg {
+
+    width: 28px;
+    height: 28px;
+
+    stroke-width: 1.3;
+
+    color: #f4eafa;
+
+    animation: pfEditorialArrow 1.8s
+        ease-in-out infinite;
+
+    transition: filter 0.3s ease;
+}
+
+.pf-intro .pf-scroll-cue:hover {
+
+    background: transparent;
+    box-shadow: none;
+
+    color: #ffffff;
+}
+
+.pf-scroll-cue:hover .pf-scroll-label {
+
+    opacity: 1;
+}
+
+.pf-scroll-cue:hover svg {
+
+    filter: drop-shadow(0 0 8px #d9b0ff);
+}
+
+@keyframes pfEditorialArrow {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* =========================================
+   ESPACIO PARA EL FUTURO MODELO 3D
+========================================= */
+
+.pf-hero .pf-pc-stage {
+
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 420px;
+
+    overflow: visible;
+}
+
+
+/* =========================================
+   CONTRASTE DEL FONDO
+========================================= */
+
+.pf-video-overlay {
+
+    background:
+
+        radial-gradient(
+            ellipse at 25% 45%,
+            rgba(12,7,30,0.38),
+            transparent 65%
+        ),
+
+        linear-gradient(
+            0deg,
+            var(--pf-bg, #15111d),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(10,5,20,0.15),
+            transparent 25%
+        );
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .pf-hero {
+
+        grid-template-columns:
+            minmax(0, 1.15fr)
+            minmax(0, 1fr);
+
+        padding-inline: 5%;
+
+        gap: 25px;
+    }
+
+    .pf-hero .pf-pc-stage {
+
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .pf-hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 60px 24px 30px;
+
+        gap: 25px;
+    }
+
+    .pf-hero .pf-intro .pf-led-title {
+
+        --led-size: 3px;
+        --led-radius: 1px;
+
+        font-size: clamp(30px, 9vw, 55px);
+    }
+
+    .pf-hero .pf-description {
+
+        margin: 22px 0 25px;
+    }
+
+    .pf-hero .pf-pc-stage {
+
+        min-height: 240px;
+    }
+}
+
+
+/* MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pf-led-text,
+    .pf-intro .pf-scroll-cue svg {
+
+        animation: none;
+    }
+}
+
+/* =========================================
+   PORTAFOLIO — RETRO CRT INTERFACE
+========================================= */
+
+.pf-workspace {
+
+    --crt-purple: #c15aff;
+    --crt-cyan: #79e6ef;
+    --crt-pink: #ef70d9;
+    --crt-black: #08070d;
+
+    position: relative;
+
+    width: min(94%, 1600px);
+
+    margin: 40px auto 100px;
+
+    padding: 0;
+
+    font-family: "Space Grotesk", monospace;
+}
+
+
+/* =========================================
+   PESTAÑAS SUPERIORES
+========================================= */
+
+.pf-workspace .pf-tabs {
+
+    display: grid;
+
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+
+    align-items: end;
+
+    gap: 4px;
+
+    padding: 0 10px;
+
+    margin-bottom: 0;
+
+    overflow: visible;
+}
+
+
+.pf-workspace .pf-tab {
+
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 0;
+    min-height: 80px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 0;
+
+    background: var(--crt-purple);
+
+    color: #f4efff;
+
+    clip-path: polygon(
+        12px 0,
+        calc(100% - 12px) 0,
+        100% 12px,
+        100% 100%,
+        0 100%,
+        0 12px
+    );
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* INTERIOR NEGRO DE LAS PESTAÑAS */
+
+.pf-workspace .pf-tab::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 2px 2px 0;
+
+    z-index: -1;
+
+    background: #0c0912;
+
+    clip-path: polygon(
+        10px 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% 100%,
+        0 100%,
+        0 10px
+    );
+
+    transition: background 0.2s ease;
+}
+
+
+/* ELIMINAR DECORACIONES ANTERIORES */
+
+.pf-workspace .pf-tab::after {
+
+    display: none;
+}
+
+
+/* TEXTO DE LAS CATEGORÍAS */
+
+.pf-workspace .pf-tab span {
+
+    display: block;
+
+    font-family: "Space Grotesk", monospace;
+
+    font-size: clamp(11px, 0.9vw, 15px);
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    text-align: left;
+
+    color: inherit;
+
+    text-shadow:
+        -0.7px 0 rgba(70, 220, 255, 0.65),
+        0.7px 0 rgba(255, 65, 180, 0.65);
+}
+
+
+/* OCULTAR NUMERACIÓN */
+
+.pf-workspace .pf-tab small {
+
+    display: none;
+}
+
+
+/* ICONOS */
+
+.pf-workspace .pf-tab svg {
+
+    flex-shrink: 0;
+
+    width: 26px;
+    height: 26px;
+
+    stroke-width: 1.6;
+
+    color: var(--crt-purple);
+
+    filter:
+        drop-shadow(-1px 0 rgba(90, 225, 255, 0.6))
+        drop-shadow(1px 0 rgba(255, 65, 190, 0.6));
+}
+
+
+/* ICONOS CIAN ALTERNADOS */
+
+.pf-workspace .pf-tab:nth-child(3) svg,
+.pf-workspace .pf-tab:nth-child(7) svg {
+
+    color: var(--crt-cyan);
+}
+
+
+/* HOVER */
+
+.pf-workspace .pf-tab:hover::before {
+
+    background: #261435;
+}
+
+
+/* PESTAÑA ACTIVA */
+
+.pf-workspace .pf-tab[aria-selected="true"] {
+
+    background: #e09aff;
+
+    color: #100817;
+
+    min-height: 88px;
+}
+
+.pf-workspace .pf-tab[aria-selected="true"]::before {
+
+    background: linear-gradient(
+        135deg,
+        #d68bfa,
+        #b75de9
+    );
+}
+
+.pf-workspace .pf-tab[aria-selected="true"] span {
+
+    font-weight: 700;
+
+    text-shadow: none;
+}
+
+.pf-workspace .pf-tab[aria-selected="true"] svg {
+
+    color: #160b21;
+
+    filter: none;
+}
+
+.pf-workspace .pf-tab:focus-visible {
+
+    outline: none;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   MARCO EXTERIOR DE LA TERMINAL
+========================================= */
+
+.pf-workspace .pf-panels {
+
+    position: relative;
+
+    padding: 16px;
+
+    border: 2px solid var(--crt-purple);
+
+    border-radius: 12px 12px 8px 8px;
+
+    background: #100a1b;
+
+    box-shadow:
+        -2px 0 0 rgba(60, 130, 255, 0.55),
+        2px 0 0 rgba(255, 50, 180, 0.45),
+        0 0 25px rgba(170, 65, 255, 0.16),
+        inset 0 0 20px rgba(170, 65, 255, 0.08);
+}
+
+
+/* =========================================
+   PANTALLA INTERIOR
+========================================= */
+
+.pf-workspace .pf-panel {
+
+    position: relative;
+
+    min-height: 440px;
+
+    padding: 0;
+
+    border: 1px solid var(--crt-cyan);
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    background-color: var(--crt-black);
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.025) 0px,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            rgba(91, 37, 130, 0.08),
+            transparent 80%
+        );
+
+    box-shadow:
+        0 0 5px rgba(110, 230, 255, 0.25),
+        inset 0 0 35px rgba(0, 0, 0, 0.65);
+}
+
+
+/* GARANTIZAR QUE SOLO SE VEA UN PANEL */
+
+.pf-workspace .pf-panel[hidden] {
+
+    display: none !important;
+}
+
+
+/* =========================================
+   BARRA SUPERIOR DE TERMINAL
+========================================= */
+
+.pf-workspace .pf-panel-meta {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    min-height: 45px;
+
+    padding: 8px 14px;
+
+    margin: 0;
+
+    border-bottom: 1px solid var(--crt-cyan);
+
+    background: linear-gradient(
+        90deg,
+        #1c102c,
+        #110b1d
+    );
+
+    font-family: "Courier New", monospace;
+
+    font-size: clamp(10px, 1vw, 15px);
+
+    color: #f5efff;
+
+    text-shadow:
+        -0.8px 0 #438eb1,
+        0.8px 0 #a92c83;
+}
+
+
+/* RUTA DE LA TERMINAL */
+
+.pf-terminal-command {
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+
+
+/* CURSOR PARPADEANTE */
+
+.pf-terminal-cursor {
+
+    flex-shrink: 0;
+
+    display: inline-block;
+
+    width: 9px;
+    height: 15px;
+
+    background: #e9d9ff;
+
+    animation: pfTerminalBlink 1.2s
+        steps(1) infinite;
+}
+
+@keyframes pfTerminalBlink {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* CONTROLES DECORATIVOS DE VENTANA */
+
+.pf-window-controls {
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+}
+
+.pf-window-controls i,
+.pf-window-controls svg {
+
+    display: block;
+
+    width: 25px;
+    height: 25px;
+
+    padding: 4px;
+
+    border: 1px solid var(--crt-cyan);
+
+    color: var(--crt-purple);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTENIDO PROVISIONAL
+========================================= */
+
+.pf-workspace .pf-placeholder {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 390px;
+
+    gap: 18px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+
+/* ICONO CENTRAL */
+
+.pf-workspace .pf-placeholder > svg {
+
+    width: 65px;
+    height: 65px;
+
+    color: var(--crt-purple);
+
+    stroke-width: 1.3;
+
+    filter:
+        drop-shadow(-1.5px 0 #36b9df)
+        drop-shadow(1.5px 0 #d943ad);
+}
+
+
+/* TÍTULO PIXELADO */
+
+.pf-workspace .pf-placeholder h2 {
+
+    font-family: "Silkscreen", monospace;
+
+    font-size: clamp(22px, 3vw, 45px);
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.02em;
+
+    color: #f9f5ff;
+
+    margin: 0;
+
+    text-shadow:
+        -1px 0 #55d9e9,
+        1px 0 #e552b1;
+}
+
+
+/* TEXTO SECUNDARIO */
+
+.pf-workspace .pf-placeholder p {
+
+    font-family: "Courier New", monospace;
+
+    font-size: clamp(13px, 1.2vw, 18px);
+
+    color: #e7d7f2;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   BARRA DE CARGA DECORATIVA
+========================================= */
+
+.pf-placeholder::after {
+
+    content: "";
+
+    display: block;
+
+    width: min(280px, 80%);
+    height: 20px;
+
+    margin-top: 8px;
+
+    padding: 3px;
+
+    border: 1px solid var(--crt-purple);
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 13px,
+            #08070d 13px,
+            #08070d 16px
+        ),
+
+        linear-gradient(
+            90deg,
+            #b955ed 0%,
+            #d57bfa 100%
+        );
+
+    background-origin: content-box;
+
+    background-clip: content-box;
+
+    background-repeat: no-repeat;
+
+    background-size:
+        100% 100%,
+        65% 100%;
+
+    box-shadow:
+        0 0 8px rgba(193, 90, 255, 0.25);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .pf-workspace .pf-tab {
+
+        flex-direction: column;
+
+        gap: 6px;
+
+        padding: 10px 5px;
+    }
+
+    .pf-workspace .pf-tab span {
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .pf-workspace .pf-tabs {
+
+        grid-template-columns: repeat(8, 110px);
+
+        overflow-x: auto;
+
+        scrollbar-width: thin;
+
+        scrollbar-color: #a66bc9 #100a1b;
+    }
+
+    .pf-workspace .pf-panels {
+
+        padding: 8px;
+    }
+
+    .pf-workspace .pf-placeholder {
+
+        min-height: 320px;
+    }
+
+    .pf-window-controls svg {
+
+        width: 19px;
+        height: 19px;
+
+        padding: 2px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pf-terminal-cursor {
+
+        animation: none;
+    }
+}
+.pf-workspace {
+    --crt-purple: #8466ef;
+    --crt-cyan: #79e6ef;
+}
+
+.pf-workspace .pf-placeholder h2 {
+    text-shadow: -1px 0 #79e6ef, 1px 0 #ef70d9;
+}
+
+/* =========================================
+   PORTAFOLIO — BORDES PIXEL 8-BIT
+========================================= */
+
+.pf-workspace {
+
+    --pixel-border: 3px;
+
+    /* Forma escalonada de las pestañas */
+
+    --pixel-tab-shape: polygon(
+        12px 0,
+        calc(100% - 12px) 0,
+        calc(100% - 12px) 3px,
+        calc(100% - 6px) 3px,
+        calc(100% - 6px) 6px,
+        calc(100% - 3px) 6px,
+        calc(100% - 3px) 12px,
+        100% 12px,
+        100% 100%,
+        0 100%,
+        0 12px,
+        3px 12px,
+        3px 6px,
+        6px 6px,
+        6px 3px,
+        12px 3px
+    );
+
+    /* Forma escalonada de la ventana */
+
+    --pixel-window-shape: polygon(
+        12px 0,
+        calc(100% - 12px) 0,
+        calc(100% - 12px) 4px,
+        calc(100% - 8px) 4px,
+        calc(100% - 8px) 8px,
+        calc(100% - 4px) 8px,
+        calc(100% - 4px) 12px,
+        100% 12px,
+
+        100% calc(100% - 12px),
+        calc(100% - 4px) calc(100% - 12px),
+        calc(100% - 4px) calc(100% - 8px),
+        calc(100% - 8px) calc(100% - 8px),
+        calc(100% - 8px) calc(100% - 4px),
+        calc(100% - 12px) calc(100% - 4px),
+        calc(100% - 12px) 100%,
+
+        12px 100%,
+        12px calc(100% - 4px),
+        8px calc(100% - 4px),
+        8px calc(100% - 8px),
+        4px calc(100% - 8px),
+        4px calc(100% - 12px),
+        0 calc(100% - 12px),
+
+        0 12px,
+        4px 12px,
+        4px 8px,
+        8px 8px,
+        8px 4px,
+        12px 4px
+    );
+}
+
+
+/* =========================================
+   PESTAÑAS CON ESQUINAS PIXELADAS
+========================================= */
+
+.pf-workspace .pf-tab {
+
+    border-radius: 0;
+
+    clip-path: var(--pixel-tab-shape);
+}
+
+.pf-workspace .pf-tab::before {
+
+    inset: var(--pixel-border)
+           var(--pixel-border)
+           0;
+
+    clip-path: var(--pixel-tab-shape);
+}
+
+
+/* =========================================
+   MARCO EXTERIOR MORADO
+========================================= */
+
+.pf-workspace .pf-panels {
+
+    position: relative;
+    isolation: isolate;
+
+    border: none;
+    border-radius: 0;
+
+    padding: 18px;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    filter:
+        drop-shadow(-1px 0 rgba(75, 140, 255, 0.7))
+        drop-shadow(1px 0 rgba(235, 65, 220, 0.6));
+}
+
+
+/* Borde exterior */
+
+.pf-workspace .pf-panels::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    background: var(--crt-purple);
+
+    clip-path: var(--pixel-window-shape);
+
+    pointer-events: none;
+}
+
+
+/* Interior del marco */
+
+.pf-workspace .pf-panels::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: var(--pixel-border);
+
+    z-index: -1;
+
+    background: #000000;
+
+    clip-path: var(--pixel-window-shape);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   MARCO INTERIOR CIAN
+========================================= */
+
+.pf-workspace .pf-panel {
+
+    position: relative;
+    isolation: isolate;
+
+    border: none;
+    border-radius: 0;
+
+    padding: 2px;
+
+    background: var(--crt-cyan);
+
+    clip-path: var(--pixel-window-shape);
+
+    box-shadow: none;
+}
+
+
+/* Fondo interior con textura CRT */
+
+.pf-workspace .pf-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    z-index: -1;
+
+    clip-path: var(--pixel-window-shape);
+
+    background-color: #08070d;
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.025) 0px,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            rgba(91, 37, 130, 0.08),
+            transparent 80%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   LÍNEA DIVISORIA DE LA TERMINAL
+========================================= */
+
+.pf-workspace .pf-panel-meta {
+
+    border-bottom: 2px solid var(--crt-cyan);
+
+    border-radius: 0;
+}
+
+
+/* =========================================
+   CONTROLES DE VENTANA PIXELADOS
+========================================= */
+
+.pf-workspace .pf-window-controls svg {
+
+    border-radius: 0;
+
+    border-width: 2px;
+
+    clip-path: polygon(
+        3px 0,
+        calc(100% - 3px) 0,
+        calc(100% - 3px) 3px,
+        100% 3px,
+        100% calc(100% - 3px),
+        calc(100% - 3px) calc(100% - 3px),
+        calc(100% - 3px) 100%,
+        3px 100%,
+        3px calc(100% - 3px),
+        0 calc(100% - 3px),
+        0 3px,
+        3px 3px
+    );
+}
+
+
+/* =========================================
+   BARRA DE CARGA
+========================================= */
+
+.pf-workspace .pf-placeholder::after {
+
+    border-width: 2px;
+
+    border-radius: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .pf-workspace {
+
+        --pixel-border: 2px;
+    }
+
+    .pf-workspace .pf-panels {
+
+        padding: 9px;
+    }
+}
+
+/* =========================================
+   PORTAFOLIO — TRANSICIÓN CONTINUA
+========================================= */
+
+.pf-page {
+
+    --pf-bg: #000000;
+    --pf-footer-transition: #402c59;
+
+    background: linear-gradient(
+        180deg,
+        #000000 0%,
+        #000000 48%,
+        #08060d 60%,
+        #130e1c 72%,
+        #241932 85%,
+        var(--pf-footer-transition) 100%
+    );
+}
+
+
+/* =========================================
+   HERO — DESVANECIMIENTO HACIA NEGRO
+========================================= */
+
+.pf-hero {
+
+    position: relative;
+
+    background-color: #000000;
+}
+
+.pf-video-overlay {
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 35%,
+        rgba(0, 0, 0, 0.08) 45%,
+        rgba(0, 0, 0, 0.25) 58%,
+        rgba(0, 0, 0, 0.55) 72%,
+        rgba(0, 0, 0, 0.85) 88%,
+        #000000 100%
+    );
+}
+
+
+/* REFUERZO DEL DESVANECIMIENTO */
+
+.pf-hero-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 65%,
+        rgba(0, 0, 0, 0.35) 80%,
+        #000000 98%,
+        #000000 100%
+    );
+
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CATEGORÍAS
+========================================= */
+
+.pf-workspace {
+
+    background: transparent;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+
+/* =========================================
+   TRANSICIÓN HACIA EL FOOTER
+========================================= */
+
+.pf-page + .footer {
+
+    background-color: #402c59;
+}
+/* TRANSICIÓN NEGRA ENTRE SECCIONES */
+
+/* PORTAFOLIO — FONDO NEGRO PURO */
+
+.pf-page {
+    --pf-bg: #000000;
+    --pf-footer-transition: #000000;
+
+    background: #000000;
+}
+
+.pf-page + .footer {
+    background-color: #000000;
+}
+/* CORRECCIÓN DE UNIONES DURANTE EL SCROLL */
+
+html:not([tp-theme="tp-theme-light"]) .pf-page {
+    background-color: #000000;
+}
+
+html:not([tp-theme="tp-theme-light"]) .pf-hero {
+    box-shadow: 0 2px 0 #000000;
+}
+
+html:not([tp-theme="tp-theme-light"]) .pf-page {
+    box-shadow: 0 2px 0 #000000;
+    position: relative;
+    z-index: 1;
+}
+/* FONDO BASE PARA EVITAR FUGAS DE COLOR */
+
+html:not([tp-theme="tp-theme-light"]):has(.pf-page),
+html:not([tp-theme="tp-theme-light"]) body:has(.pf-page) {
+    background-color: #000000;
+}
+/* SELLADO DE LA UNIÓN ENTRE HERO Y CATEGORÍAS */
+
+html:not([tp-theme="tp-theme-light"]) .pf-hero::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 45px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        #000000 75%,
+        #000000 100%
+    );
+
+    z-index: 20;
+    pointer-events: none;
+}
+html:not([tp-theme="tp-theme-light"]) .pf-workspace {
+    position: relative;
+}
+
+html:not([tp-theme="tp-theme-light"]) .pf-workspace::before {
+    content: "";
+    position: absolute;
+
+    top: -3px;
+    left: 50%;
+
+    width: 100vw;
+    height: 6px;
+
+    transform: translateX(-50%);
+
+    background: #000000;
+    z-index: 21;
+    pointer-events: none;
+}
+/* =========================================
+   PORTAFOLIO — RETRO TERMINAL TITLE
+========================================= */
+
+/* PORTAFOLIO — RETRO PIXEL CRT */
+
+.pf-hero h1 {
+    font-family: "Press Start 2P", monospace;
+    font-weight: 400;
+
+    font-size: clamp(30px, 4.2vw, 76px);
+    line-height: 1.4;
+    letter-spacing: -0.04em;
+
+    text-transform: uppercase;
+
+    /* Textura de puntos CRT */
+    background: radial-gradient(
+        circle,
+        #ffffff 60%,
+        rgba(255, 255, 255, 0.75) 80%,
+        rgba(255, 255, 255, 0.30) 100%
+    );
+
+    background-size: 3px 3px;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: none;
+
+    /* Aberración cromática */
+    filter:
+        drop-shadow(-1.5px 0 #49dfff)
+        drop-shadow(1.5px 0 #ef65d5);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 767px) {
+    .pf-hero h1 {
+        font-size: clamp(20px, 5.8vw, 42px);
+        letter-spacing: -0.05em;
+        background-size: 2px 2px;
+    }
+}
+/* PORTAFOLIO — TIPOGRAFÍA PIXEL */
+
+.pf-page .pf-hero h1,
+.pf-page .pf-hero h1 span {
+    font-family: "Press Start 2P", monospace !important;
+    font-weight: 400 !important;
+    font-size: clamp(28px, 4.2vw, 76px);
+    letter-spacing: -0.04em;
+    line-height: 1.4;
+}
+/* =========================================
+   PORTAFOLIO — INTERACTIVE 3D MODEL
+========================================= */
+
+.pf-pc-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+    gap: 0;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+}
+
+/* Eliminar decoraciones del placeholder anterior */
+
+.pf-pc-stage::before,
+.pf-pc-stage::after {
+    display: none;
+}
+
+/* Área de renderizado 3D */
+
+#portfolio-3d {
+    position: relative;
+
+    width: 130%;
+    height: clamp(420px, 42vw, 680px);
+
+    flex-shrink: 0;
+
+    background: transparent;
+    overflow: visible;
+
+    z-index: 2;
+    pointer-events: auto;
+
+    cursor: grab;
+}
+
+#portfolio-3d:active {
+    cursor: grabbing;
+}
+
+#portfolio-3d canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+
+/* Indicador de interacción */
+
+.pf-3d-hint {
+    position: relative;
+    inset: auto;
+    transform: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    width: 100%;
+    margin-top: -15px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+.pf-3d-hint svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 767px) {
+
+    #portfolio-3d {
+        width: 100%;
+        height: 380px;
+    }
+
+    .pf-3d-hint {
+        margin-top: 0;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* =========================================
+   PORTFOLIO — BLUE MINIMAL INTERFACE
+========================================= */
+
+/* MODO OSCURO */
+
+.pf-page .pf-workspace {
+    --gallery-bg: #071322;
+    --gallery-edge: #0a2544;
+    --nav-bg: rgba(15, 34, 55, 0.85);
+    --nav-border: rgba(111, 184, 255, 0.22);
+    --nav-text: #e3edf8;
+    --nav-icon: #8fcfff;
+    --nav-hover: rgba(66, 156, 255, 0.10);
+    --nav-active: #008cf0;
+    --gallery-accent: #48baff;
+    --gallery-glow: rgba(0, 140, 255, 0.40);
+    --gallery-card: #142b43;
+
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 40px 0 30px;
+
+    background:
+        radial-gradient(
+            ellipse at 0% 100%,
+            rgba(0, 110, 240, 0.28),
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 100% 100%,
+            rgba(0, 150, 255, 0.22),
+            transparent 50%
+        ),
+        var(--gallery-bg);
+
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+/* MODO CLARO */
+
+html[tp-theme="tp-theme-light"] .pf-page .pf-workspace {
+    --gallery-bg: #edf6ff;
+    --gallery-edge: #d5eaff;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --nav-border: rgba(80, 145, 210, 0.18);
+    --nav-text: #193b60;
+    --nav-icon: #1769bb;
+    --nav-hover: rgba(0, 120, 240, 0.07);
+    --nav-active: #007de3;
+    --gallery-accent: #007de3;
+    --gallery-glow: rgba(0, 130, 255, 0.24);
+    --gallery-card: #dcecff;
+
+    background:
+        radial-gradient(
+            ellipse at 0% 0%,
+            rgba(88, 183, 255, 0.30),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 100% 100%,
+            rgba(100, 190, 255, 0.30),
+            transparent 55%
+        ),
+        var(--gallery-bg);
+}
+
+/* =========================================
+   BARRA DE NAVEGACIÓN REDONDEADA
+========================================= */
+
+.pf-page .pf-workspace .pf-tabs {
+    position: relative;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 5px;
+
+    width: max-content;
+    max-width: calc(100% - 48px);
+
+    margin: 0 auto 24px;
+    padding: 7px;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--nav-border);
+    border-radius: 100px;
+
+    background: var(--nav-bg);
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 8px 30px rgba(0, 50, 110, 0.10),
+        inset 0 1px 2px rgba(255, 255, 255, 0.05);
+
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    clip-path: none;
+}
+
+.pf-page .pf-workspace .pf-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+/* PESTAÑAS INDIVIDUALES */
+
+.pf-page .pf-workspace .pf-tab {
+    appearance: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+    gap: 9px;
+
+    min-width: 0;
+    min-height: 46px;
+
+    margin: 0;
+    padding: 12px 19px;
+
+    border: 1px solid transparent;
+    border-radius: 100px;
+
+    background: transparent;
+    color: var(--nav-text);
+
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+
+    white-space: nowrap;
+    text-align: center;
+    text-shadow: none;
+
+    box-shadow: none;
+    clip-path: none;
+    filter: none;
+    transform: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* TEXTO E ICONOS */
+
+.pf-page .pf-workspace .pf-tab span {
+    display: block;
+    color: inherit;
+    white-space: nowrap;
+}
+
+.pf-page .pf-workspace .pf-tab small {
+    display: none;
+}
+
+.pf-page .pf-workspace .pf-tab svg,
+.pf-page .pf-workspace .pf-tab i {
+    width: 21px;
+    height: 21px;
+
+    flex-shrink: 0;
+
+    color: var(--nav-icon);
+    stroke-width: 1.7px;
+
+    filter: none;
+}
+
+/* HOVER */
+
+.pf-page .pf-workspace .pf-tab:hover {
+    background: var(--nav-hover);
+    color: var(--nav-text);
+    border-color: transparent;
+}
+
+/* PESTAÑA ACTIVA */
+
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] {
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #13a5ff,
+        #006bd6
+    );
+
+    border: 1px solid rgba(100, 200, 255, 0.45);
+
+    box-shadow:
+        0 3px 15px var(--gallery-glow),
+        inset 0 1px 2px rgba(255, 255, 255, 0.25);
+
+    text-shadow: none;
+}
+
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] svg,
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] i {
+    color: #ffffff;
+}
+
+/* ELIMINAR DECORACIONES RETRO */
+
+.pf-page .pf-workspace .pf-tab::before,
+.pf-page .pf-workspace .pf-tab::after,
+.pf-page .pf-workspace .pf-tabs::before,
+.pf-page .pf-workspace .pf-tabs::after {
+    display: none;
+    content: none;
+}
+
+/* =========================================
+   GALERÍAS A TODO EL ANCHO
+========================================= */
+
+.pf-page .pf-workspace .pf-panels {
+    position: relative;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+    clip-path: none;
+    filter: none;
+
+    overflow: visible;
+}
+
+.pf-page .pf-workspace .pf-panel {
+    position: relative;
+
+    width: 100%;
+    max-width: none;
+
+    min-height: 420px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+    clip-path: none;
+    filter: none;
+
+    overflow: visible;
+}
+
+/* ELIMINAR MARCOS Y EFECTOS CRT */
+
+.pf-page .pf-workspace::before,
+.pf-page .pf-workspace::after,
+.pf-page .pf-workspace .pf-panels::before,
+.pf-page .pf-workspace .pf-panels::after,
+.pf-page .pf-workspace .pf-panel::before,
+.pf-page .pf-workspace .pf-panel::after {
+    display: none;
+    content: none;
+}
+
+/* OCULTAR BARRAS DE TERMINAL */
+
+.pf-page .pf-workspace .pf-panel-meta,
+.pf-page .pf-workspace .pf-window-controls {
+    display: none !important;
+}
+
+/* CONSERVAR FUNCIONAMIENTO DE LAS PESTAÑAS */
+
+.pf-page .pf-workspace .pf-panel[hidden] {
+    display: none !important;
+}
+
+/* CATEGORÍAS TODAVÍA SIN GALERÍA */
+
+.pf-page .pf-workspace .pf-placeholder {
+    color: var(--nav-text);
+}
+
+.pf-page .pf-workspace .pf-placeholder h2 {
+    color: var(--nav-text);
+    text-shadow: none;
+}
+
+.pf-page .pf-workspace .pf-placeholder svg {
+    color: var(--gallery-accent);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .pf-page .pf-workspace .pf-tab {
+        padding: 11px 14px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .pf-page .pf-workspace {
+        padding: 25px 0 20px;
+    }
+
+    .pf-page .pf-workspace .pf-tabs {
+        justify-content: flex-start;
+        max-width: calc(100% - 24px);
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
+    .pf-page .pf-workspace .pf-tab {
+        min-height: 40px;
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+    .pf-page .pf-workspace .pf-tab svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .pf-page .pf-workspace .pf-panel {
+        min-height: 340px;
+    }
+}
+/* =========================================
+   PORTFOLIO — SEAMLESS BACKGROUND
+========================================= */
+
+/* MODO OSCURO */
+
+.pf-page #portfolio-projects {
+    background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            rgba(0, 105, 220, 0.20) 0%,
+            rgba(0, 65, 140, 0.10) 35%,
+            transparent 72%
+        ),
+        #000000 !important;
+
+    padding-top: 25px;
+    padding-bottom: 40px;
+}
+
+/* MODO CLARO */
+
+html[tp-theme="tp-theme-light"]
+.pf-page #portfolio-projects {
+    background:
+        radial-gradient(
+            ellipse at 50% 48%,
+            rgba(80, 165, 255, 0.22) 0%,
+            rgba(120, 190, 255, 0.10) 35%,
+            transparent 72%
+        ),
+        #ffffff !important;
+}
+.pf-page .pf-workspace,
+.pf-page .pf-panels,
+.pf-page .pf-panel {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+/* =========================================
+   REFINED BLUE PALETTE
+========================================= */
+
+.pf-page .pf-workspace {
+    --nav-bg: rgba(20, 35, 51, 0.75);
+    --nav-border: rgba(128, 185, 229, 0.20);
+    --nav-text: #dce8f5;
+    --nav-icon: #80b9e5;
+    --nav-hover: rgba(128, 185, 229, 0.08);
+    --nav-active: #23476a;
+    --gallery-accent: #80b9e5;
+    --gallery-glow: rgba(65, 135, 200, 0.20);
+}
+
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] {
+    background: #23476a;
+    border-color: rgba(128, 185, 229, 0.35);
+    box-shadow: none;
+}
+
+/* MODO CLARO */
+
+html[tp-theme="tp-theme-light"] .pf-page .pf-workspace {
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --nav-border: rgba(50, 107, 158, 0.15);
+    --nav-text: #24394f;
+    --nav-icon: #326b9e;
+    --nav-hover: rgba(50, 107, 158, 0.06);
+    --nav-active: #dceafa;
+    --gallery-accent: #326b9e;
+    --gallery-glow: rgba(65, 135, 200, 0.15);
+}
+
+html[tp-theme="tp-theme-light"]
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] {
+    background: #dceafa;
+    border-color: transparent;
+    color: #326b9e;
+    box-shadow: none;
+}
+
+html[tp-theme="tp-theme-light"]
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] svg {
+    color: #326b9e;
+}
+/* =========================================
+   PORTFOLIO — GLOSSY BLUE TABS
+========================================= */
+
+.pf-page .pf-workspace .pf-tabs {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+
+    gap: 8px;
+    padding: 15px 12px;
+    overflow: visible;
+}
+
+/* CATEGORÍAS NO SELECCIONADAS */
+
+.pf-page .pf-workspace .pf-tab {
+    position: relative;
+
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 100px;
+
+    box-shadow: none;
+    text-shadow: none;
+
+    padding: 13px 20px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* HOVER DE CATEGORÍAS NO SELECCIONADAS */
+
+.pf-page .pf-workspace
+.pf-tab:not([aria-selected="true"]):hover {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+
+    color: #7dd3ff;
+    transform: translateY(-2px);
+}
+
+/* BOTÓN SELECCIONADO — EFECTO 3D */
+
+.pf-page .pf-workspace
+.pf-tab[aria-selected="true"] {
+
+    background:
+        radial-gradient(
+            ellipse at 50% 115%,
+            rgba(100, 220, 255, 0.95),
+            transparent 65%
+        ),
+        linear-gradient(
+            135deg,
+            #00b9f5 0%,
+            #1479f5 45%,
+            #3155e7 100%
+        );
+
+    border: 1px solid rgba(145, 220, 255, 0.85);
+    border-radius: 100px;
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.45),
+        inset 0 -3px 8px rgba(0, 45, 160, 0.25),
+        0 0 0 5px rgba(0, 130, 255, 0.12),
+        0 5px 22px rgba(0, 145, 255, 0.45);
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* REFLEJO SUPERIOR */
+
+.pf-page .pf-workspace
+.pf-tab[aria-selected="true"]::before {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 1px;
+    left: 18%;
+
+    width: 64%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.95),
+        transparent
+    );
+
+    border-radius: 100px;
+    pointer-events: none;
+}
+
+/* REFLEJO INFERIOR */
+
+.pf-page .pf-workspace
+.pf-tab[aria-selected="true"]::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    bottom: -12px;
+    left: 15%;
+
+    width: 70%;
+    height: 22px;
+
+    background: rgba(140, 230, 255, 0.65);
+
+    border-radius: 50%;
+    filter: blur(12px);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ICONO SELECCIONADO */
+
+.pf-page .pf-workspace
+.pf-tab[aria-selected="true"] svg {
+    color: #ffffff;
+
+    filter: drop-shadow(
+        0 0 4px rgba(255, 255, 255, 0.35)
+    );
+}
+
+/* EFECTO AL PRESIONAR */
+
+.pf-page .pf-workspace .pf-tab:active {
+    transform: scale(0.96);
+}
+/* GLOSSY TABS — MODO CLARO */
+
+html[tp-theme="tp-theme-light"]
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] {
+
+    background:
+        radial-gradient(
+            ellipse at 50% 115%,
+            rgba(130, 225, 255, 0.85),
+            transparent 65%
+        ),
+        linear-gradient(
+            135deg,
+            #27b9f5,
+            #1678e8,
+            #315ce0
+        );
+
+    color: #ffffff;
+    border: 1px solid #8dd8ff;
+
+    box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.6),
+        inset 0 -3px 8px rgba(0, 65, 180, 0.2),
+        0 0 0 4px rgba(0, 130, 255, 0.08),
+        0 5px 18px rgba(0, 110, 220, 0.25);
+}
+
+html[tp-theme="tp-theme-light"]
+.pf-page .pf-workspace
+.pf-tab[aria-selected="true"] svg {
+    color: #ffffff;
+}
+
+html[tp-theme="tp-theme-light"]
+.pf-page .pf-workspace
+.pf-tab:not([aria-selected="true"]):hover {
+    color: #007de3;
+}
+@media (max-width: 1200px) {
+
+    .pf-page .pf-workspace .pf-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 16px;
+    }
+
+    .pf-page .pf-workspace .pf-tab {
+        padding: 11px 16px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .pf-page .pf-workspace .pf-tab {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+}
+/* TIPOGRAFÍA DE LAS CATEGORÍAS */
+
+.pf-page .pf-workspace .pf-tab,
+.pf-page .pf-workspace .pf-tab span {
+    font-family: 'Space Grotesk', Arial, sans-serif !important;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+/* ELIMINAR LA LÍNEA SUPERIOR */
+
+.pf-page .pf-workspace
+.pf-tab[aria-selected="true"]::before {
+    display: none;
+    content: none;
+}
+.pf-page .pf-workspace .pf-tab,
+.pf-page .pf-workspace .pf-tab span {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+/* Mayor peso para la categoría seleccionada */
+
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] {
+    font-weight: 600;
+}
+/* TIPOGRAFÍA LIMPIA DE LAS PESTAÑAS */
+
+.pf-page .pf-workspace .pf-tab,
+.pf-page .pf-workspace .pf-tab span {
+    font-family: 'Space Grotesk', Arial, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.3px !important;
+
+    text-shadow: none !important;
+    filter: none !important;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* CATEGORÍA SELECCIONADA */
+
+.pf-page .pf-workspace .pf-tab[aria-selected="true"],
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] span {
+    font-weight: 600 !important;
+}
+.pf-page .pf-workspace .pf-tab,
+.pf-page .pf-workspace .pf-tab span {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.3px !important;
+    text-shadow: none !important;
+}
+
+.pf-page .pf-workspace .pf-tab[aria-selected="true"],
+.pf-page .pf-workspace .pf-tab[aria-selected="true"] span {
+    font-weight: 600 !important;
+}

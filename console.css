@@ -1,0 +1,628 @@
+:root {
+    --console-visible-height: 520;
+}
+/* ==========================================================
+   FOOTER — CONSOLA RETRO
+========================================================== */
+
+.footer {
+
+    background: linear-gradient(
+        to bottom,
+        #402c59 0px,
+        #30203f 80px,
+        #21162f 160px,
+        #100b17 280px,
+        #000000 450px
+    );
+
+
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.footer-heading {
+    text-align: center;
+    padding: 20px 50px 10px;
+}
+
+.footer-heading h2 {
+    font-size: clamp(55px, 8vw, 115px);
+    letter-spacing: -.03em;
+    line-height: 1;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.footer-heading p {
+    font-size: 17px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 22px 5vw 25px;
+    font-size: 11px;
+    letter-spacing: .08em;
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   ESTRUCTURA DE LA CONSOLA
+========================================================== */
+
+.console-outer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.console-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.console-stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--stage-width, 1931px);
+    height: 631px;
+    transform-origin: top left;
+    transform: scale(var(--scale, 1));
+    isolation: isolate;
+    will-change: transform;
+}
+
+
+/* ==========================================================
+   RELLENO ENTRE MÓDULOS
+========================================================== */
+
+.console-fill {
+    position: absolute;
+    top: 0.5px;
+    height: 631px;
+    background: url("assets/img/Consola_0010_Relleno.png") repeat-x left top / 47px 631px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.console-fill-left {
+    left: 670px;
+    width: max(0px, calc(50% - 333.5px - 668px));
+}
+
+.console-fill-right {
+    left: calc(50% + 334px);
+    width: max(0px,
+            calc(100% - 575px - (50% + 333.5px)));
+}
+
+
+/* ==========================================================
+   MÓDULOS DE LA CONSOLA
+========================================================== */
+
+.module {
+    position: absolute;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+}
+
+.module-left {
+    width: 689px;
+    left: 0;
+    top: 4px;
+}
+
+.module-screen {
+    width: 667px;
+    left: calc(50% - 333px);
+    top: -8px;
+    z-index: 2;
+}
+
+.module-right {
+    width: 575px;
+    right: 0;
+    top: 112px;
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   CONTROLES DE LA CONSOLA
+========================================================== */
+
+.left-controls {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 689px;
+    height: 613px;
+    z-index: 2;
+}
+
+.center-controls {
+    position: absolute;
+    left: calc(50% - 333.5px);
+    top: -8px;
+    width: 667px;
+    height: 623px;
+    z-index: 2;
+}
+
+.right-controls {
+    position: absolute;
+    right: 0;
+    top: 112px;
+    width: 575px;
+    height: 545px;
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   TECLAS INTERACTIVAS
+========================================================== */
+
+.key-well {
+    position: absolute;
+    left: 125px;
+    top: 280px;
+    width: 530px;
+    height: 210px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.keys {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    transform: scaleX(.94) scaleY(.96);
+    transform-origin: 350px 395px;
+}
+
+.key-border-overlay {
+    position: absolute;
+    left: 120px;
+    top: 435px;
+    width: 530px;
+    height: 58px;
+    z-index: 5;
+    pointer-events: none;
+    user-select: none;
+}
+
+.key {
+    position: absolute;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transform-origin: 50% 85%;
+    transition:
+        transform 150ms cubic-bezier(.2, .8, .25, 1),
+        filter 150ms ease;
+    touch-action: manipulation;
+}
+
+.key img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+}
+
+.key:hover,
+.key:focus-visible {
+    transform: translateY(7px) scaleY(.96);
+    filter: brightness(.97);
+}
+
+.key:active,
+.key.is-pressed {
+    transform: translateY(12px) scaleY(.91);
+    filter: brightness(.86);
+}
+
+.key:focus-visible,
+.red-control:focus-visible,
+.small-control:focus-visible {
+    outline: 4px solid #ffe25b;
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   PANTALLA PRINCIPAL CRT
+========================================================== */
+
+.crt {
+    position: absolute;
+    left: 60px;
+    top: 225px;
+    width: 540px;
+    height: 240px;
+    border-radius: 39px;
+    z-index: 2;
+    overflow: hidden;
+    color: #c7ff9b;
+    text-shadow: 0 0 9px #a9ff85;
+    background: transparent;
+    font-family: 'Courier New', monospace;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px 28px;
+}
+
+.crt::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            #0002 0px,
+            #0002 2px,
+            transparent 3px,
+            transparent 5px);
+    pointer-events: none;
+}
+
+.crt-top,
+.crt-bottom {
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.crt-message {
+    text-align: center;
+    display: grid;
+    gap: 0;
+}
+
+.crt-message strong {
+    font-size: 38px;
+    letter-spacing: -2px;
+}
+
+.crt-message small {
+     white-space: pre;
+    font-family: "Courier New", monospace;
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   PANTALLA AUXILIAR
+========================================================== */
+
+.mini-display {
+    position: absolute;
+    left: 203px;
+    top: 177px;
+    width: 274px;
+    height: 37px;
+    z-index: 2;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+    color: #baff9d;
+    font: bold 16px/1 'Courier New', monospace;
+    letter-spacing: 1.2px;
+    text-shadow: 0 0 7px #9bff86;
+    white-space: nowrap;
+}
+
+.mini-display::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom,
+            transparent 0 3px,
+            rgba(0, 0, 0, .12) 3px 4px);
+}
+
+.mini-display span {
+    display: block;
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+}
+
+.mini-display span.is-changing {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+
+/* ==========================================================
+   BOTÓN ROJO
+========================================================== */
+
+.red-control {
+    position: absolute;
+    left: 60px;
+    top: 180px;
+    width: 180px;
+    height: 165px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.red-control img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    transition: opacity 100ms ease;
+}
+
+.red-control .normal {
+    opacity: 1;
+}
+
+.red-control .pressed {
+    opacity: 0;
+}
+
+.red-control:hover .normal,
+.red-control:active .normal,
+.red-control:focus-visible .normal {
+    opacity: 0;
+}
+
+.red-control:hover .pressed,
+.red-control:active .pressed,
+.red-control:focus-visible .pressed {
+    opacity: 1;
+}
+
+
+/* ==========================================================
+   BOTONES MORADO Y AMARILLO
+========================================================== */
+
+.small-control {
+    position: absolute;
+    top: 202px;
+    width: 92px;
+    height: 96px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.small-control.purple {
+    left: 270px;
+}
+
+.small-control.yellow {
+    left: 365px;
+}
+
+.small-control img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.small-control .normal {
+    opacity: 1;
+}
+
+.small-control .pressed {
+    opacity: 0;
+}
+
+.small-control:hover .normal,
+.small-control:active .normal,
+.small-control.is-latched .normal,
+.small-control.is-latched:hover .normal,
+.small-control.is-latched:focus-visible .normal {
+    opacity: 0;
+}
+
+.small-control:hover .pressed,
+.small-control:active .pressed,
+.small-control.is-latched .pressed,
+.small-control.is-latched:hover .pressed,
+.small-control.is-latched:focus-visible .pressed {
+    opacity: 1;
+}
+
+.small-control:focus-visible {
+    outline: 3px solid #ffe25b;
+    outline-offset: 2px;
+}
+
+
+/* ==========================================================
+   INDICADORES LED
+========================================================== */
+
+.left-controls-display {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 689px;
+    height: 613px;
+    z-index: 3;
+    pointer-events: none;
+
+    --led-left-x: 546px;
+    --led-right-x: 610px;
+    --led-y: 190px;
+}
+
+.status-led {
+    position: absolute;
+    width: 60px;
+    height: 70px;
+    top: calc(var(--led-y) - 34px);
+    object-fit: contain;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 160ms ease;
+    pointer-events: none;
+}
+
+.status-led.is-on {
+    opacity: 1;
+}
+
+.led-green {
+    left: calc(var(--led-left-x) - 30px);
+}
+
+.led-yellow {
+    left: calc(var(--led-right-x) - 30px);
+}
+
+@media (max-width: 700px) {
+
+    :root {
+        --console-visible-height: 515;
+    }
+
+    .footer-bottom {
+        gap: 8px;
+    }
+}
+@media (max-width: 650px) {
+
+    .footer-heading {
+        padding: 65px 15px 30px;
+    }
+
+    .footer-bottom {
+        font-size: 9px;
+    }
+}
+#screenText.ascii-art {
+    white-space: pre;
+    font-family: "Courier New", monospace;
+    font-size: clamp(12px, 1.4vw, 24px);
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: none;
+    text-shadow: 0 0 2px #baff90;
+    margin-top: 8px;
+}
+/* FOOTER — MODO CLARO */
+
+html[tp-theme="tp-theme-light"] .footer {
+    background:
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(239,155,145,.65) 0%,
+            rgba(239,155,145,.30) 35%,
+            transparent 75%
+        ),
+        linear-gradient(
+            to bottom,
+            var(--light-skills) 0%,
+            #e6d9ed 30%,
+            #f0e6ed 65%,
+            var(--light-footer) 100%
+        ) !important;
+
+    color: var(--light-text);
+}
+
+html[tp-theme="tp-theme-light"] .footer-heading h2,
+html[tp-theme="tp-theme-light"] .footer-bottom {
+    color: var(--light-text) !important;
+}
+
+/* HALO ROSA SALMÓN DE LA CONSOLA */
+
+html[tp-theme="tp-theme-light"] .console-outer {
+    filter: drop-shadow(
+        0 -12px 25px rgba(235,137,125,.40)
+    );
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .key,
+    .red-control img {
+        transition: none;
+    }
+}
+
+
+#screenTitle.ascii-title {
+    font-size: clamp(12px, 1.2vw, 20px);
+    margin-bottom: 5px;
+}
+.footer-heading > span {
+    font-size: 12px;
+    letter-spacing: .17em;
+    font-weight: 800;
+    color: #d05d5d;
+}
+/* =========================================
+   CONSOLA — BLACK TO PINK GLOW
+========================================= */
+
+.footer {
+
+    background:
+
+        radial-gradient(
+            ellipse 85% 65% at 50% 95%,
+            rgba(255, 65, 180, 1) 0%,
+            rgba(240, 40, 165, 0.95) 20%,
+            rgba(210, 35, 150, 0.75) 40%,
+            rgba(165, 30, 130, 0.35) 65%,
+            transparent 100%
+        ),
+
+        linear-gradient(
+            180deg,
+            #000000 0%,
+            #000000 8%,
+            #130d1e 22%,
+            #30203f 45%,
+            #21152e 65%,
+            #100b16 85%,
+            #08050d 100%
+        ) !important;
+}
+/* #end

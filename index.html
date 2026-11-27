@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="console.css">
 </head>
 
 <body id="body" class="tp-magic-cursor">
@@ -202,7 +204,7 @@
                                             </ul>
                                         </li>-->
                                         <li class="has-dropdown p-static">
-                                            <a href="index.html">Portafolio</a>
+                                            <a href="portafolio.html">Portafolio</a>
                                             <div class="tp-submenu submenu has-homemenu">
                                                 <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-lg-4">
                                                     <div class="col homemenu">
@@ -296,7 +298,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><a href="#contacto">Contacto</a></li>
+                                        <li><a href="#contact">Contacto</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -454,7 +456,7 @@
 
                                             </h3>
 
-                                            <p>Mi trabajo nace de la combinación entre la sensibilidad artística y el pensamiento lógico. Integro diferentes disciplinas creativas y tecnológicas para desarrollar proyectos que equilibren la estética, la narrativa, la funcionalidad y la innovación. </p>
+                                            <p>Me dedico a transformar ideas en arte visual que conecta e inspira </p>
 
                                             <div class="tp-hero-btn wrap ">
                                                 <div class="tp-hover-btn-wrapper tp-btn-bounce">
@@ -649,8 +651,8 @@
                                     <span class="about-note-tape"></span>
 
                                     <span class="about-note-text">
-                                        Multimedia<br>
-                                        & Audiovisual
+                                        Post productora<br>
+                                        Audiovisual y Multimedia
                                     </span>
 
                                 </div>
@@ -662,21 +664,27 @@
                             <div class="about-content">
 
                                 <div class="about-eyebrow">
-                                    CONOCE ACERCA DE MÍ
+                                    ACERCA DE MÍ
                                 </div>
 
                                 <h2 class="about-title">
-                                    Creatividad, tecnología
-                                    y <span>narrativa visual</span>
+                                    Combino la creatividad,<span> tecnología
+                                    y narrativa</span>
                                 </h2>
 
                                 <div class="about-description">
 
                                     <p>
-                                    Soy licenciada en Multimedia y Producción Audiovisual, con formación de maestría en Postproducción Digital Audiovisual y actualmente curso Ingeniería en Software. </p>
+                                        Soy una profesional Licenciada en Multimedia y Producción
+                                        Audiovisual. Con una maestría en Postproducción Digital
+                                        y conocimientos de lenguajes de programación para videojuegos</p>
 
                                     <p>
-                                        Mi experiencia abarca la producción audiovisual, el diseño gráfico, la animación y el desarrollo de recursos digitales. Me caracterizo por ser organizada, minuciosa y metódica, con un interés especial en la innovación y la optimización de procesos creativos. </p>
+                                        Combino el diseño, la producción audiovisual,
+                                        la postproducción digital y la programación
+                                        para transformar ideas en experiencias
+                                        visuales y funcionales.
+                                    </p>
 
                                 </div>
 
@@ -744,7 +752,7 @@
                                                 <div class="tp-section-title-inner p-relative">
 
                                                     <h3 class="tp-section-title tp_title_anim">Habilidades <br> que
-                                                        poseo</h3>
+                                                        poseo.</h3>
                                                 </div>
                                                 <p>La combinacion de mi pasion por el diseño, codigo e interacción en el
                                                     mundo del diseño interactivo.</p>
@@ -1031,99 +1039,99 @@
 
                                             </div>
                                             <script>
-(function () {
+                                                (function () {
 
-    const wrapper = document.querySelector(
-        '.tp-services-capsule-item-wrapper'
-    );
+                                                    const wrapper = document.querySelector(
+                                                        '.tp-services-capsule-item-wrapper'
+                                                    );
 
-    if (!wrapper) return;
+                                                    if (!wrapper) return;
 
-    const items = Array.from(
-        wrapper.querySelectorAll('[data-tp-throwable-el]')
-    );
+                                                    const items = Array.from(
+                                                        wrapper.querySelectorAll('[data-tp-throwable-el]')
+                                                    );
 
-    const skills = items.filter(item =>
-        item.querySelector('.tp-services-capsule-item')
-    );
+                                                    const skills = items.filter(item =>
+                                                        item.querySelector('.tp-services-capsule-item')
+                                                    );
 
-    const shapes = items.filter(item =>
-        item.querySelector('img')
-    );
+                                                    const shapes = items.filter(item =>
+                                                        item.querySelector('img')
+                                                    );
 
-    // HABILIDADES PERMANENTES
+                                                    // HABILIDADES PERMANENTES
 
-    const fixedNames = [
-        'Edición de Video',
-        'Corrección de Color',
-        'Motion Graphics',
-        'Frontend'
-    ];
+                                                    const fixedNames = [
+                                                        'Edición de Video',
+                                                        'Corrección de Color',
+                                                        'Motion Graphics',
+                                                        'Frontend'
+                                                    ];
 
-    // CANTIDAD DE ELEMENTOS
+                                                    // CANTIDAD DE ELEMENTOS
 
-    const randomSkillCount = 12;
-    const shapeCount = 9;
+                                                    const randomSkillCount = 12;
+                                                    const shapeCount = 9;
 
-    // MEZCLAR ELEMENTOS
+                                                    // MEZCLAR ELEMENTOS
 
-    function shuffle(array) {
-        const result = [...array];
+                                                    function shuffle(array) {
+                                                        const result = [...array];
 
-        for (let i = result.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
+                                                        for (let i = result.length - 1; i > 0; i--) {
+                                                            const j = Math.floor(Math.random() * (i + 1));
 
-            [result[i], result[j]] =
-                [result[j], result[i]];
-        }
+                                                            [result[i], result[j]] =
+                                                                [result[j], result[i]];
+                                                        }
 
-        return result;
-    }
+                                                        return result;
+                                                    }
 
-    const fixedSkills = skills.filter(item =>
-        fixedNames.includes(item.textContent.trim())
-    );
+                                                    const fixedSkills = skills.filter(item =>
+                                                        fixedNames.includes(item.textContent.trim())
+                                                    );
 
-    const optionalSkills = skills.filter(item =>
-        !fixedNames.includes(item.textContent.trim())
-    );
+                                                    const optionalSkills = skills.filter(item =>
+                                                        !fixedNames.includes(item.textContent.trim())
+                                                    );
 
-    // EVITAR FIGURAS REPETIDAS
+                                                    // EVITAR FIGURAS REPETIDAS
 
-    const uniqueShapes = Array.from(
-        new Map(
-            shapes.map(item => [
-                item.querySelector('img').getAttribute('src'),
-                item
-            ])
-        ).values()
-    );
+                                                    const uniqueShapes = Array.from(
+                                                        new Map(
+                                                            shapes.map(item => [
+                                                                item.querySelector('img').getAttribute('src'),
+                                                                item
+                                                            ])
+                                                        ).values()
+                                                    );
 
-    const selectedSkills = shuffle([
-        ...fixedSkills,
-        ...shuffle(optionalSkills).slice(0, randomSkillCount)
-    ]);
+                                                    const selectedSkills = shuffle([
+                                                        ...fixedSkills,
+                                                        ...shuffle(optionalSkills).slice(0, randomSkillCount)
+                                                    ]);
 
-    const selectedShapes = shuffle(uniqueShapes)
-        .slice(0, shapeCount);
+                                                    const selectedShapes = shuffle(uniqueShapes)
+                                                        .slice(0, shapeCount);
 
-    // ALTERNAR ETIQUETAS Y FIGURAS
+                                                    // ALTERNAR ETIQUETAS Y FIGURAS
 
-    const finalItems = [];
+                                                    const finalItems = [];
 
-    for (let i = 0; i < selectedSkills.length; i++) {
+                                                    for (let i = 0; i < selectedSkills.length; i++) {
 
-        finalItems.push(selectedSkills[i]);
+                                                        finalItems.push(selectedSkills[i]);
 
-        if (selectedShapes[i]) {
-            finalItems.push(selectedShapes[i]);
-        }
-    }
+                                                        if (selectedShapes[i]) {
+                                                            finalItems.push(selectedShapes[i]);
+                                                        }
+                                                    }
 
-    wrapper.replaceChildren(...finalItems);
+                                                    wrapper.replaceChildren(...finalItems);
 
-})();
-</script>
+                                                })();
+                                            </script>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-5">
@@ -1261,13 +1269,13 @@
                             <div class="tp-marquee-slider fix">
                                 <div class="tp-marquee-slider-active d-flex align-items-center ">
                                     <div class="tp-marquee-item">
-                                        <p>Proyectos (2025-2026) <img src="assets/img/marquee/pen.svg" alt=""></p>
+                                        <p>Portafolio (2026) <img src="assets/img/marquee/pen.svg" alt=""></p>
                                     </div>
                                     <div class="tp-marquee-item">
                                         <p>Danielle M. Rodriguez <img src="assets/img/marquee/stroke.svg" alt=""></p>
                                     </div>
                                     <div class="tp-marquee-item">
-                                        <p>Portafolio (2026) <img src="assets/img/marquee/smile2.svg" alt=""></p>
+                                        <p>Proyectos (2026) <img src="assets/img/marquee/smile2.svg" alt=""></p>
                                     </div>
                                     <div class="tp-marquee-item">
                                         <p>Danielle Resume <img src="assets/img/marquee/desing.svg" alt=""></p>
@@ -1279,7 +1287,7 @@
                     <!-- marquee area end -->
             </main>
 
-            <footer class="footer" id="contacto">
+            <footer class="footer" id="contact">
                 <div class="footer-heading">
                     <h2>¿Creamos algo?</h2>
                 </div>
@@ -1437,8 +1445,9 @@
     <script src="assets/js/throwable.js"></script>
     <script src="assets/js/bootstrap-bundle.js"></script>
     <!-- Consola retro -->
+    <script src="console.js"></script>
     <script src="script.js"></script>
-
+    <script src="home.js"></script>
 </body>
 
 </html>
